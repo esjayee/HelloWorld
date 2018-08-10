@@ -10,17 +10,27 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string[] gang = new[] { "Rob", "Keith", "Colin" };
-
-            foreach (var friend in gang)
-            {
-                GreetFriend(friend);
-            }
+            Console.WriteLine($"Result {Calculate()}");
         }
 
-        public static void GreetFriend(string friend)
+        public static int Calculate()
         {
-            Console.WriteLine($"Hello {friend}, my friend!");
+            string first, second;
+            int result;
+
+            Console.WriteLine("Simple Calculator (Add)");
+            Console.WriteLine("-----------------------");
+
+            Console.Write("First number: ");
+            first = Console.ReadLine();
+
+            Console.Write("Second number: ");
+            second = Console.ReadLine();
+
+            result = int.Parse(first) + int.Parse(second);
+
+            return result;
         }
+
     }
 }
