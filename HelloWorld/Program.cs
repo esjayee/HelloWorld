@@ -10,27 +10,38 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Result {Calculate()}");
+            Console.Write("Enter a number: ");
+            string userInput = Console.ReadLine();
+
+            try
+            {
+                int userInputAsInt = int.Parse(userInput);
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Number is required");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Format exception. Input should be a number");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Number too large");
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Whoops! Something went wrong!");
+            }
+            finally
+            {
+                Console.WriteLine("Finished!");
+            }
+            
         }
 
-        public static int Calculate()
-        {
-            string first, second;
-            int result;
 
-            Console.WriteLine("Simple Calculator (Add)");
-            Console.WriteLine("-----------------------");
 
-            Console.Write("First number: ");
-            first = Console.ReadLine();
-
-            Console.Write("Second number: ");
-            second = Console.ReadLine();
-
-            result = int.Parse(first) + int.Parse(second);
-
-            return result;
-        }
 
     }
 }
