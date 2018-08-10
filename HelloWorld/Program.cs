@@ -10,21 +10,32 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            WriteSomething();
-            WriteSomethingSpecific("I am an argument and am called from a method");
+            int result = Add(34, 56);
 
-            Console.Read();
+            Console.WriteLine(result);
+            Console.WriteLine(Add(18, 23));
+            Console.WriteLine(Add(Add(1, 2), Add(3, 7)));
+
+            Console.WriteLine(Multiply(3, 6));
+
+            Console.WriteLine(Divide(357, 9));
         }
 
-        // access modifier (static) return type method type(parameter1, parameter2)
-        public static void WriteSomething()
+        public static int Add(int num1, int num2)
         {
-            Console.WriteLine("I am called from a method");
+            int sum = num1 + num2;
+
+            return sum;
         }
 
-        public static void WriteSomethingSpecific(string myText)
+        public static int Multiply(int num1, int num2)
         {
-            Console.WriteLine(myText);
+            return num1 * num2;
+        }
+
+        public static double Divide(int num1, int num2)
+        {
+            return (double)num1 / (double)num2;
         }
     }
 }
