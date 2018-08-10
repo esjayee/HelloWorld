@@ -13,6 +13,19 @@ namespace HelloWorld
             Console.Write("Enter a number: ");
             string userInput = Console.ReadLine();
 
+            const int zero = 0;
+            int myInt = 32;
+            
+            try
+            {
+                Console.WriteLine(myInt / zero);
+            }
+            catch (DivideByZeroException)
+            {
+
+                Console.WriteLine($"Cannot divide {myInt} by zero");
+            }
+
             try
             {
                 int userInputAsInt = int.Parse(userInput);
